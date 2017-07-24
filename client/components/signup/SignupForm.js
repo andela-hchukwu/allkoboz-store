@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import validateInput from '../../../server/shared/validations/signup';
 import TextFieldGroup from '../common/TextFieldGroup';
 
@@ -41,7 +40,9 @@ class SignupForm extends React.Component {
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       this.props.userSignupRequest(this.state).then(
-        () => { },
+        () => {
+          this.context.router.push('/');
+        },
         ({ data }) => this.setState({ errors: data, isLoading: false })
       );
     }
@@ -64,11 +65,11 @@ class SignupForm extends React.Component {
           label="Firstname"
           onChange={this.onChange}
           value={this.state.firstname}
-          field="Firstname"
+          field="firstname"
         />
         <TextFieldGroup
           error={errors.lastname}
-          label=" Lastnamea"
+          label="Lastname"
           onChange={this.onChange}
           value={this.state.lastname}
           field="lastname"
@@ -109,6 +110,10 @@ class SignupForm extends React.Component {
 
 SignupForm.propTypes = {
   userSignupRequest: React.PropTypes.func.isRequired
+}
+
+SignupForm.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 export default SignupForm;
