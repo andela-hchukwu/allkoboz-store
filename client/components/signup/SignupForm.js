@@ -13,11 +13,13 @@ class SignupForm extends React.Component {
       password: '',
       confirmPassword: '',
       errors: {},
-      isLoading: false
+      isLoading: false,
+      inValid: false
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.checkUserExist = this.checkUserExist.bind(this);
   }
 
   onChange(event) {
@@ -32,6 +34,25 @@ class SignupForm extends React.Component {
     }
 
     return isValid;
+  }
+
+  checkUserExist(event) {
+    const field = event.target.name;
+    const value = event.target.value;
+    if (value !== '') {
+      this.props.isUserExist(value).then(res => {
+        let errors = this.state.errors;
+        let inValid;
+        if (res.data.user) {
+          errors[field] = 'There is user with such ' + field;
+          inValid = true;
+        } else {
+          errors[field] = '';
+          inValid = false;
+        }
+        this.setState({ errors, inValid });
+      });
+    }
   }
 
   onSubmit(event) {
@@ -61,6 +82,7 @@ class SignupForm extends React.Component {
           error={errors.username}
           label="Username"
           onChange={this.onChange}
+          checkUserExist={this.checkUserExist}
           value={this.state.username}
           field="username"
         />
@@ -82,6 +104,7 @@ class SignupForm extends React.Component {
           error={errors.email}
           label="Email"
           onChange={this.onChange}
+          checkUserExist={this.checkUserExist}
           value={this.state.email}
           field="email"
           type="email"
@@ -103,7 +126,7 @@ class SignupForm extends React.Component {
           type="password"
         />
         <div className="form-group">
-          <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
+          <button disabled={this.state.isLoading || this.state.inValid } className="btn btn-primary btn-lg">
             Sign up
           </button>
         </div>
@@ -114,7 +137,8 @@ class SignupForm extends React.Component {
 
 SignupForm.propTypes = {
   userSignupRequest: React.PropTypes.func.isRequired,
-  addFlashMessage: React.PropTypes.func.isRequired
+  addFlashMessage: React.PropTypes.func.isRequired,
+  isUserExist: React.PropTypes.func.isRequired
 }
 
 SignupForm.contextTypes = {
