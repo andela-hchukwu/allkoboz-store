@@ -1,0 +1,209 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+body {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+header {
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url(https://image.freepik.com/free-vector/shopping-online-sale-background_23-2147509490.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover
+}
+
+h1 {
+  color: white;
+}
+
+.btn {
+  border: 1px solid #e67e22;
+  padding: 10px 30px;
+  color: #e67e22;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-right: 15px
+}
+
+.button-awesome {
+  margin-top: 50px;
+}
+
+.btn-half {
+  background-color: #e67e22;
+  color: #ffffff
+}
+
+.btn-full:hover {
+  background-color: #e67e22;
+  color: #ffffff;
+  transition: all 0.5s ease-in;
+}
+
+.copy {
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 20px;
+}
+
+h3:after {
+  width: 100px;
+  height: 2px;
+  background-color: #e67e22;
+  display: block;
+  content: " ";
+  margin: 0 auto;
+  margin-top: 30px
+}
+
+.features h3 {
+  margin-top: 80px;
+  margin-bottom: 30px
+}
+
+.arranging {
+  text-align: justify
+}
+
+.features i {
+  font-size: 50px;
+  color: #e67e22;
+  margin-left: 35%;
+}
+
+.features h4 {
+  margin-left: 40px
+}
+
+.gadget-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.gadget-showcase li {
+  display: block;
+  width: 25%;
+  float: left
+}
+
+.gadget-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden
+}
+
+.gadget-photo img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: all 0.5s;
+}
+
+.gadget-photo img:hover {
+  transform: scale(1.05)
+}
+
+.gadget {
+  margin-top: 60px;
+}
+
+.pic img {
+  width: 40%;
+  height: 360px;
+  margin-left: 50%;
+  margin-top: 50px;
+}
+
+.works-step {
+  margin-top: 50px;
+}
+
+.works-step div {
+  border: 1px solid #e67e22;
+  display: inline-block;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px
+}
+
+.works-step img {
+  height: 40px;
+  margin-top: 20px;
+  margin-right: 20px
+}
+
+.clearfix {
+  zoom:1;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  content: ".";
+  height: 0;
+  display: block;
+  clear: both
+}
+
+.mobile {
+  margin-top: 60px
+}
+
+.cities {
+  margin-top: 100px;
+}
+
+.cities img {
+  width: 100px;
+  margin-top: 50px
+}
+
+.cities i {
+  color: #e67e22
+}
+
+.testimonials {
+  margin-top: 80px;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(https://media.istockphoto.com/photos/teak-wood-background-horizontal-drop-shadow-picture-id485870457?k=6&m=485870457&s=612x612&w=0&h=eOn39YnJ443uc7lSUq4ijkbFp79T5C_kird3uwsaFsQ=);
+  padding-top: 80px;
+  padding-bottom: 60px;
+  color: white;
+  background-attachment: fixed;
+}
+
+.testimonials p {
+  color: white;
+  line-height: 25px;
+  text-align: justify;
+  margin-top: 40px;
+}
+
+.testimonials cite img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.footer {
+  /*background-color: #e67e22;*/
+  padding-top: 60px;
+  padding-bottom: 60px;
+}

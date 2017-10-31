@@ -3,6 +3,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import validateInput from '../../../server/shared/validations/login';
 import { connect } from 'react-redux';
 import { login } from '../../actions/authenticationActions';
+import { Link } from 'react-router';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -68,6 +69,7 @@ class LoginForm extends React.Component {
         />
 
         <div className="form-group"><button className="btn btn-primary btn-lg" disabled={isLoading}>Login</button></div>
+        <div className="container">New User? <Link to="/signup">Signup here</Link></div>
       </form>
     );
   }
