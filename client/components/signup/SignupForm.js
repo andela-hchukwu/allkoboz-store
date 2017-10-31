@@ -1,6 +1,7 @@
 import React from 'react';
 import validateInput from '../../../server/shared/validations/signup';
 import TextFieldGroup from '../common/TextFieldGroup';
+import { Link } from 'react-router';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -130,6 +131,7 @@ class SignupForm extends React.Component {
             Sign up
           </button>
         </div>
+        <div className="container">Already have an account? <Link to="/login">Sign in here!</Link></div>
       </form>
     );
   }

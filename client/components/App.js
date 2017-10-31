@@ -1,14 +1,16 @@
 import React from 'react';
-import NavigationBar from './NavigationBar';
+import NavigationBar from './common/NavigationBar';
+import Footer from './common/Footer';
 import FlashMessagesList from './flash/FlashMessagesList';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <NavigationBar />
         <FlashMessagesList />
         {this.props.children}
+        <Footer />
       </div>
     );
   }

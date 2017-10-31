@@ -1,37 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import DashboardForm from './DashboardForm';
 
-class DashboardPage extends React.Component {
+class Dashboard extends React.Component {
   render() {
     return (
-      <div className="dashboard row">
-        <div className="col s12">
-          <div className="col s12 z-depth-5 card-panel">
-            <h5 className="center">DASHBOARD</h5>
-          </div>
-          <div className="row">
-            <div className="col s12">
-              <ul
-                className="tabs tab-demo-active z-depth-1 blue-grey">
-                <li className="tab col s4">
-                  <a className="white-text waves-effect waves-light active"
-                    href="#public">Public</a>
-                </li>
-                <li className="tab col s4">
-                  <a className="white-text waves-effect waves-light"
-                    href="#role">Role</a>
-                </li>
-                <li className="tab col s4">
-                  <a className="white-text waves-effect waves-light"
-                    href="#private">Private</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <div className="row">
+        <div className="col-md-4 col-md-offset-4">
+          <DashboardForm />
         </div>
       </div>
     );
   }
 }
 
-export default connect()(DashboardPage);
+export default Dashboard;
