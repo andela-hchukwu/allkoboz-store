@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard row">
         <div className="col-md-12">
-          <div className="col-md"></div>
+          <div className="col-md">Hello world</div>
         </div>
       </div>
       );
